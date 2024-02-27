@@ -120,29 +120,6 @@ public_users.get('/title/:title', function (req, res) {
             res.status(404).send(JSON.stringify(err, null, 4))
         })
 });
-// public_users.get('/title/:title', function (req, res) {
-//     return new Promise((resolve, reject) => {
-//         const title = req.params.title;
-//         let book = books.filter(x => x.title === title)
-//         if (book) {
-//             resolve(
-//                 res.send(book)
-//             );
-//         } else {
-//             reject(res.status(208).json({ message: "book not found" }))
-//         }
-
-//     });
-// });
-
-//  Get book review
-public_users.get('/review/:isbn', function (req, res) {
-    const isbn = req.params.isbn;
-    if (books[isbn] && books[isbn].reviews) {
-        let reviews = books[isbn].reviews;
-        res.send(res.send(JSON.stringify({ reviews }, null, 4)))
-    }
-});
 
 
 
